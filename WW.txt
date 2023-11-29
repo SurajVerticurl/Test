@@ -1,0 +1,16 @@
+172.18.0.2 smart-home-controller
+172.18.0.3 get-home-parameter
+172.18.0.4 risk-predictor
+
+
+ # Log the received voice command
+    logging.info('Received voice command: %s', voice_command)
+
+    # Communicate with Get Home Parameter Microservice
+    try:
+        home_parameters = requests.get(homeurl).json()
+    except requests.exceptions.RequestException as e:
+        # Log an error if there's an issue with the request
+        logging.error('Error communicating with Get Home Parameter Microservice: %s', str(e))
+        return jsonify({'error': 'Communication error with Get Home Parameter Microservice'}), 500
+
