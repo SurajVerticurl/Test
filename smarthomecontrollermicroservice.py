@@ -6,10 +6,10 @@ import logging
 import os
 
 # Define the URL for Get Home Parameter Microservice using environment variable
-homeurl = "http://52.54.211.229:5001/get-parameters"
+homeurl = "http://54.163.126.180:5001/get-parameters"
 
 # Define the URL for Risk Predictor Microservice using environment variable
-home2url = "http://52.54.211.229:5002/predict-risk"
+home2url = "http://54.163.126.180:5002/predict-risk"
 
 app = Flask(__name__)
 
@@ -64,7 +64,7 @@ def adjust_thermostat():
         global current_temperature
 
         # Corrected URL for Home Automation Service
-        home_automation_url = 'http://52.54.211.229:5000/update-temperature'
+        home_automation_url = 'http://54.163.126.180:5000/update-temperature'
 
         # Communicate with Home Automation Service to adjust thermostat
         try:
